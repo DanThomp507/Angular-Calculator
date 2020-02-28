@@ -59,4 +59,21 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
+  public getOperation(op: string) {
+
+    if (this.firstOperand === null) {
+      this.firstOperand = Number(this.currentNumber)
+
+    } else if (this.operator) {
+      const result = this.doCalculation(this.operator , Number(this.currentNumber))
+      this.currentNumber = String(result)
+      this.firstOperand = result
+    }
+    this.operator = op
+    this.waitForSecondNumber = true
+
+    console.log(this.firstOperand)
+
+  }
+
 }
