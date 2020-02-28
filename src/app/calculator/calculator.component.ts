@@ -36,4 +36,19 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
+  private doCalculation(op , secondOp) {
+    switch (op) {
+      case '+':
+      return this.firstOperand += secondOp
+      case '-':
+      return this.firstOperand -= secondOp
+      case '*':
+      return this.firstOperand *= secondOp
+      case '/':
+      return this.firstOperand /= secondOp
+      case '=':
+      return secondOp
+    }
+  }
+
 }
