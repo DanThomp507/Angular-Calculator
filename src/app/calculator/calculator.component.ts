@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-calculator',
@@ -7,17 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalculatorComponent implements OnInit {
   // string that will be displayed in the result input element
-  currentNumber = '0';
+  currentNumber = '0'
   // value of the first operand of the operation
-  firstOperand = null;
+  firstOperand = null
   // operation
-  operator = null;
+  operator = null
   // boolean value indicating if ready to enter the second operand of the operation
-  waitForSecondNumber = false;
+  waitForSecondNumber = false
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  public getNumber(s: string) {
+    if (this.waitForSecondNumber) {
+      this.currentNumber = s
+      this.waitForSecondNumber = false
+    } else {
+      this.currentNumber === '0' ? this.currentNumber = s : this.currentNumber += s
+
+    }
   }
 
 }
