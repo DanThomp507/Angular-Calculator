@@ -30,4 +30,10 @@ export class CalculatorComponent implements OnInit {
     }
   }
 
+  getDecimal() {
+    if( !this.currentNumber.includes('.')) {
+        this.currentNumber += '.'
+    }
+  }
+
 }
