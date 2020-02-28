@@ -20,6 +20,14 @@ export class CalculatorComponent implements OnInit {
   ngOnInit() {
   }
 
+  // used to reset calculations
+  public clear() {
+    this.currentNumber = '0'
+    this.firstOperand = null
+    this.operator = null
+    this.waitForSecondNumber = false
+  }
+
   public getNumber(s: string) {
     if (this.waitForSecondNumber) {
       this.currentNumber = s
@@ -31,23 +39,23 @@ export class CalculatorComponent implements OnInit {
   }
 
   getDecimal() {
-    if( !this.currentNumber.includes('.')) {
-        this.currentNumber += '.'
+    if (!this.currentNumber.includes('.')) {
+      this.currentNumber += '.'
     }
   }
 
-  private doCalculation(op , secondOp) {
+  private doCalculation(op, secondOp) {
     switch (op) {
       case '+':
-      return this.firstOperand += secondOp
+        return this.firstOperand += secondOp
       case '-':
-      return this.firstOperand -= secondOp
+        return this.firstOperand -= secondOp
       case '*':
-      return this.firstOperand *= secondOp
+        return this.firstOperand *= secondOp
       case '/':
-      return this.firstOperand /= secondOp
+        return this.firstOperand /= secondOp
       case '=':
-      return secondOp
+        return secondOp
     }
   }
 
