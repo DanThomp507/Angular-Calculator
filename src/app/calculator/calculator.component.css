@@ -1,12 +1,12 @@
 .calculator {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: 1px solid grey;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
   background-color: #D4D4D2;
+  box-shadow: 4px 4px 11px 0px rgba(0, 0, 0, 0.14);
 }
 
 .calculator-screen {
